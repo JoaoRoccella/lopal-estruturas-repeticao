@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+</head>
+
+<body>
+    <script>
+
+        let numeroLimite = 10;
+        let numeroLimiteTentativas = 3;
+        let numeroPensado = Math.floor(Math.random() * numeroLimite + 1);
+        let ganhou = false;
+
+        for (tentativa = 1; tentativa <= numeroLimiteTentativas; tentativa++) {
+
+            if (ganhou) {
+
+                alert('Parabéns, você acertou!');
+                ganhou = false;
+            }
+
+            if (tentativa === 1) {
+
+                let opcao = parseInt(prompt('Bem-vindo ao Jogo da Adivinhação!\nDigite [1] para INICIAR ou [2] para ENCERRAR'));
+                
+                if (opcao === 2) break;
+            }
+
+
+            let palpite = parseInt(prompt(`Chute um número de 1 a ${numeroLimite}. ${tentativa === 1 ? '\nVocê tem ' + numeroLimiteTentativas + ' tentativas.' : ''}`));
+
+            if (palpite === numeroPensado) {
+
+                ganhou =  true;
+                tentativa = 0;
+            }
+            else {
+
+                if (tentativa < numeroLimiteTentativas) {
+
+                    alert(`Você errou! Você tem mais ${(numeroLimiteTentativas - tentativa)} tentativas.`);
+                } else {
+
+                    tentativa = 0;
+                    alert(`Que pena! O número que eu pensei foi ${numeroPensado}.`);
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
