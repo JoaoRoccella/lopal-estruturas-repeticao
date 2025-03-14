@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura While</title>
+    <title>While</title>
 </head>
 <body>
     <script>
-        // código da aula de estruturas de repetição: while
+        let anoDeCopa = 1930;
+
+        let anoLimite = prompt('Informe o ano limite da lista:');
+
+        while(anoDeCopa <= anoLimite) {
+            document.write(anoDeCopa + ' é ano de copa.<br>');
+            anoDeCopa = anoDeCopa + 4;
+        }
     </script>
 </body>
 </html>
