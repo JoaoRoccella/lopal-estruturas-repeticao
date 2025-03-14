@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Idade</title>
+</head>
+<body>
+    <script>
+        let totalDePessoas = parseInt(prompt('Digite o número de pessoas.'));
+        let somaDasIdades = 0;
+
+        for(let numero = 1; numero <= totalDePessoas; numero++) {
+            let idade = parseInt(prompt('Digite a idade da pessoa numero ' + numero + ':'));
+            
+            console.log(`Tipo de "idade": ${typeof(idade)}`);
+            
+            somaDasIdades += idade;
+        }
+
+        let mediaDeIdade = somaDasIdades / totalDePessoas;
+
+        document.write('A média de idade das pessoas é ' + mediaDeIdade);
+        
+    </script>
+</body>
+</html>
