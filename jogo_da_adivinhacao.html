@@ -12,7 +12,7 @@
 
         let numeroLimite = 10;
         let numeroLimiteTentativas = 3;
-        let numeroPensado = Math.floor(Math.random() * numeroLimite + 1);
+        let numeroPensado;
         let ganhou = false;
 
         for (tentativa = 1; tentativa <= numeroLimiteTentativas; tentativa++) {
@@ -26,6 +26,8 @@
             if (tentativa === 1) {
 
                 let opcao = parseInt(prompt('Bem-vindo ao Jogo da Adivinhação!\nDigite [1] para INICIAR ou [2] para ENCERRAR'));
+
+                numeroPensado = Math.floor(Math.random() * numeroLimite + 1);
                 
                 if (opcao === 2) break;
             }
@@ -37,6 +39,7 @@
 
                 ganhou =  true;
                 tentativa = 0;
+                continue;
             }
             else {
 
